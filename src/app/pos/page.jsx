@@ -1,7 +1,7 @@
 "use client";
 
 import NavAdmin from "../../app/componets/navPos/NavAdmin";
-import VisualAgregarPorductos from "../../app/componets/botnCrearPedido/botonNuevoPedido";
+import VisualAgregarPorductos from "../componets/visualagregarporductos/visualagregarporductos";
 
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
