@@ -1,19 +1,11 @@
 "use client";
 
-import  NavAdmin  from "../../app/componets/navPos/NavAdmin";
+import  NavAdmin  from "../componets/nav/naverp";
 
 
-export default function ERP() {
+export default function Home() {
   return (
-<div>
-
-    <div>
-      <NavAdmin/>
-    </div>
-    <div>
-
-      <h1>ERP</h1>
-    </div>
-</div>
+    <NavAdmin/>
+   
   );
 }

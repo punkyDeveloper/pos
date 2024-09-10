@@ -172,39 +172,45 @@ function VisualAgregarProductos() {
                     {/* Resumen de la Venta */}
                     <Form>
                     <Form.Group className="mb-3" style={{ maxHeight: '60vh', overflowY: 'auto' }}>
-                            <Form.Label>Productos Seleccionados:</Form.Label>
-                            <ListGroup>
-                                {productosSeleccionados.map((producto) => (
-                                    <ListGroup.Item key={producto.id} className="d-flex align-items-center">
-                                        <img
-                                            src={producto.imagen}
-                                            alt={producto.nombre}
-                                            style={{ width: '50px', height: '50px', objectFit: 'cover', marginRight: '10px' }}
-                                        />
-                                        <div className="d-flex flex-grow-1 justify-content-between align-items-center">
-                                            <span>{producto.nombre}</span>
-                                            <span>
-                                              Cantidad:
-                                                <FormControl
-                                                    type="number"
-                                                    value={producto.cantidad}
-                                                    onChange={(e) => handlePrecioChange(producto.id, parseFloat(e.target.value))}
-                                                    style={{ width: '100px' }}
-                                                />
-                                            </span>
-                                             <span>Precio: $ {producto.precio.toLocaleString()}</span>
-                                            <Button
-                                                variant="outline-danger"
-                                                size="sm"
-                                                onClick={() => handleEliminarProducto(producto.id)}
-                                            >
-                                                x
-                                            </Button>
-                                        </div>
-                                    </ListGroup.Item>
-                                ))}
-                            </ListGroup>
-                        </Form.Group>
+    <Form.Label>Productos Seleccionados:</Form.Label>
+    {productosSeleccionados.length === 0 ? (
+        <p>No se encuentran productos seleccionados</p>
+    ) : (
+        <ListGroup>
+            {productosSeleccionados.map((producto) => (
+                <ListGroup.Item key={producto.id} className="d-flex align-items-center">
+                    <img
+                        src={producto.imagen}
+                        alt={producto.nombre}
+                        style={{ width: '50px', height: '50px', objectFit: 'cover', marginRight: '10px' }}
+                    />
+                    <div className="d-flex flex-grow-1 justify-content-between align-items-center">
+                        <span>{producto.nombre}</span>
+  
+                        <span>
+                        Cantidad:
+                            <FormControl
+                                type="number"
+                                value={producto.cantidad}
+                                onChange={(e) => handlePrecioChange(producto.id, parseFloat(e.target.value))}
+                                style={{ width: '100px' }}
+                            />
+                        </span>
+                        <span>Precio: $ {producto.precio}</span>
+                        <Button
+                            variant="outline-danger"
+                            size="sm"
+                            onClick={() => handleEliminarProducto(producto.id)}
+                        >
+                            x
+                        </Button>
+                    </div>
+                </ListGroup.Item>
+            ))}
+        </ListGroup>
+    )}
+</Form.Group>
+
 
                         <Form.Group className="mb-3">
                             <Form.Label>Cliente:</Form.Label>

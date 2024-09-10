@@ -1,6 +1,6 @@
 "use client";
 
-import  NavAdmin  from "../../app/componets/navPos/NavAdmin";
+// import  NavAdmin  from "../../componets/navPos/NavPos";
 
 
 export default function Pedido() {
