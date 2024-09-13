@@ -13,7 +13,10 @@ export default function Home() {
     setError(null);
 
     try {
-        const url = "http://localhost:3001/login";
+      const url = `${process.env.NEXT_PUBLIC_LOGIN}/login`
+      if (!url) {
+        throw new Error("URL de inicio de sesión no definida. Verifica la variable de entorno.");
+      }
         const response = await fetch(url, {
             method: "POST",
             headers: {
