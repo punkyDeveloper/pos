@@ -1,11 +1,14 @@
 "use client";
 
+import NavAdmin from "../componets/nav/NavPos";
+
+
 export default function Pedido() {
   return (
 <div>
 
     <div>
-      <NavAdmin/>
+    <NavAdmin />
     </div>
     <div>
 
