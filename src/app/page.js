@@ -14,6 +14,7 @@ export default function Home() {
 
     try {
       const url = `${process.env.NEXT_PUBLIC_LOGIN}/login`
+      console.log(url)
       if (!url) {
         throw new Error("URL de inicio de sesión no definida. Verifica la variable de entorno.");
       }
